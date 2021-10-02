@@ -3,11 +3,14 @@
     "description": "Tool for Downloading Uni results as PDF",
     "version": "1.0",
     "manifest_version": 2,
-    "permissions": ["tabs", "*://*.google.com/*"],
+    "permissions": ["activeTab"],
     "content_scripts": [
         {
             "matches": ["*://*.lucas.lboro.ac.uk/*"],
-            "js": ["content.js"]
+            "js": ["html2pdf.bundle.min.js", "content.js"]
         }
-    ]
+    ],
+    "browser_action": {
+        "default_popup": "popup.html"
+    }
 }
