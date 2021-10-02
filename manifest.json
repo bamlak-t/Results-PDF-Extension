@@ -1,0 +1,13 @@
+{
+    "name": "Results to PDF",
+    "description": "Tool for Downloading Uni results as PDF",
+    "version": "1.0",
+    "manifest_version": 2,
+    "permissions": ["tabs", "*://*.google.com/*"],
+    "content_scripts": [
+        {
+            "matches": ["*://*.lucas.lboro.ac.uk/*"],
+            "js": ["content.js"]
+        }
+    ]
+}
