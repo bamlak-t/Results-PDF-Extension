@@ -6,8 +6,13 @@
     "permissions": ["tabs", "*://*.google.com/*"],
     "content_scripts": [
         {
-            "matches": ["*://*.lucas.lboro.ac.uk/*"],
+            "matches": ["<all_urls>"],
             "js": ["content.js"]
         }
-    ]
+    ],
+    "browser_action": {
+        "default_popup": "popup.html",
+        "default_title": "Download-PDF"
+    },
+    "content_security_policy": "script-src 'self' https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js 'unsafe-eval'; object-src 'self' "
 }
