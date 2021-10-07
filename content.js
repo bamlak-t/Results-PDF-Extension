@@ -1,13 +1,8 @@
-document.addEventListener('DOMContentLoaded', function() {
-    var convertButton = document.getElementById('convertButton');
-    convertButton.addEventListener('click', function() {
-        chrome.tabs.getSelected(null, function(tab) {
-            // chrome.tabs.sendRequest(tab.id, {action: "getDOM"}, function(response) {
-            //     console.log(response.dom);
-            //   });
-            var element = document.querySelector('body');
-            html2pdf(element);
-        });
-        
-    }, false);
-}, false);
+chrome.runtime.onMessage.addListener((options) => {
+    console.log("working");
+    var table = document.getElementsByClassName("application-list")[0];
+
+    // TODO add/remove some columns and update table based on check
+
+    html2pdf(table);
+})
