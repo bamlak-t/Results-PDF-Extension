@@ -74,4 +74,5 @@ chrome.runtime.onMessage.addListener((options) => {
     console.log(tempTable)
     // convert table into a pdf and download
     html2pdf(tempTable);
+
 })
