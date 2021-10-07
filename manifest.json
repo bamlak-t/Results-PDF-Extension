@@ -3,16 +3,14 @@
     "description": "Tool for Downloading Uni results as PDF",
     "version": "1.0",
     "manifest_version": 2,
-    "permissions": ["tabs", "*://*.google.com/*"],
+    "permissions": ["activeTab"],
     "content_scripts": [
         {
-            "matches": ["<all_urls>"],
-            "js": ["content.js"]
+            "matches": ["*://*.lucas.lboro.ac.uk/*"],
+            "js": ["html2pdf.bundle.min.js", "content.js"]
         }
     ],
     "browser_action": {
-        "default_popup": "popup.html",
-        "default_title": "Download-PDF"
-    },
-    "content_security_policy": "script-src 'self' https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js 'unsafe-eval'; object-src 'self' "
+        "default_popup": "popup.html"
+    }
 }
